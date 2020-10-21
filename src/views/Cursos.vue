@@ -5,9 +5,11 @@
     </div>
 
     <transition>
-      <div v-if="api">
-        <h1>{{ api.titulo }}</h1>
-        <p>{{ api.descricao }}</p>
+      <div v-if="api" class="conteudo">
+        <div>
+          <h1>{{ api.titulo }}</h1>
+          <p>{{ api.descricao }}</p>
+        </div>
         <ul>
           <li v-for="curso in api.cursos" :key="curso.id">
             <h2>

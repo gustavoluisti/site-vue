@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Contato from "../views/Contato.vue";
 import Cursos from "../views/Cursos.vue";
 import Curso from "../views/Curso.vue";
+import Aula from "../views/Aula.vue";
 
 Vue.use(Router);
 
@@ -30,7 +31,15 @@ const router = new Router({
       path: "/curso/:curso",
       name: "curso",
       props: true,
-      component: Curso
+      component: Curso,
+      children: [
+        {
+          path: ":aula",
+          name: "aula",
+          component: Aula,
+          props: true
+        }
+      ]
     }
   ]
 });
